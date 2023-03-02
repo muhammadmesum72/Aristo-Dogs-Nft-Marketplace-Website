@@ -33,3 +33,46 @@ input::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
+
+input[type="checkbox"] {
+ appearance: none;
+  background-color: rgba(238, 238, 238, 0);
+  margin: 0;
+  font: inherit;
+  color: rgb(255, 0, 0);
+  width: 1em;
+  height: 1em;
+  border-radius: 10px;
+  place-content: center;
+  transform: translateY(-0.075em);
+  display: grid;
+  opacity: 100;
+}
+
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border: 0.15em solid rgba(17, 208, 250, 100);
+
+  box-shadow: inset 1em 1em rgba(17, 208, 250, 100);
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  opacity: 100;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(2);
+  opacity: 100;
+  /* background-color: aqua; */
+}
+/* 
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+} */
+

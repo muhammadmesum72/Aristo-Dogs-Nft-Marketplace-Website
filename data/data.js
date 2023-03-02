@@ -103,3 +103,55 @@ export const DogHousesImgs = [
   DogHouse9,
   DogHouse10,
 ];
+
+export const DogHousesList = [
+  {
+    id: 1,
+    img: DogHouse1,
+    isStaked: true,
+  },
+  {
+    id: 3,
+    img: DogHouse2,
+    isStaked: false,
+  },
+  {
+    id: 2,
+    img: DogHouse3,
+    isStaked: true,
+  },
+  {
+    id: 4,
+    img: DogHouse4,
+    isStaked: false,
+  },
+];
+
+export const WalletNfts = [
+  {
+    name: "Dog House #234",
+    id: "12s3s",
+    nft: DogHouse8,
+  },
+  {
+    name: "Dog House #789",
+    id: "3s433",
+    nft:DogHouse10,
+  },
+  {
+    name: "Dog House #099",
+    id: "89hyd",
+    nft: DogHouse9,
+  },
+];
+
+// const stakedHousesFilter = () => {
+//   // const stakedHouses = DogHousesList.filter((house) => house.isStaked == true)
+//   // return stakedHouses
+  
+// }
+// stakedHousesFilter()
+export const StakedHouses = DogHousesList.filter((house) => house.isStaked == true)
+
+// console.log(StakedHouses)
+
