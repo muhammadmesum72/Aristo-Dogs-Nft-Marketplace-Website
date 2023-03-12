@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import {useState} from "react";
+import React from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import SelectNfts from "../../components/Select Nfts/SelectNfts";
 
 const createRaffle = () => {
-  const [showSelectNftsModal, setShowSelectNftsModal] = useState(false);
+  const [showSelectNftsModal, setShowSelectNftsModal] = React.useState(false);
 
   const showModal = () => {
     setShowSelectNftsModal(()=> true);
