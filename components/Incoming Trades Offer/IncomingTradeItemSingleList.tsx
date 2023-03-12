@@ -12,6 +12,7 @@ const TradeItemSingleList = ({ tradeOffer }: any) => {
         <td className="py-2 px-3  grid grid-cols-2 lg:flex">
           {nfts.map((nft: any) => (
             <Image
+            key={78999}
               src={nft}
               alt="nft"
               className="lg:w-12 w-auto lg:h-auto  rounded-lg"
