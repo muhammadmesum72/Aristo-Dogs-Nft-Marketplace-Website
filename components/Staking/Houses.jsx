@@ -15,39 +15,8 @@ const customStyles = {
     position: "relative",
   },
 };
-import { DogHousesList, StakedHouses } from "../../data/data";
 
 const Houses = () => {
-  const [stakedHouses, setStakedHouses] = useState(StakedHouses);
-  const [newHousesForStake, setNewHousesForStake] = useState([]);
-  const [houseForUnstake, setHousesForUnstake] = useState({});
-  // const [unStake, ]
-
-  const [selectedImages, setSelectedImages] = useState([]);
-
-  const handleImageClick = (image, isStaked) => {
-    // if (selectedImages.includes(image)){
-    // } else if(isStaked){
-    //   setUnstakeButton(true)
-    // }
-    // if (selectedImages.includes(image)) {
-    //     setSelectedImages(selectedImages.filter((selectedImage) => selectedImage !== image));
-    // } else {
-    //   setSelectedImages([...selectedImages, image]);
-    // }
-  };
-
-  const addNftForStake = (newHouse) => {
-    if (stakedHouses.includes(newHouse)) {
-      stakedHouses.filter((house) => house.id !== newHouse.id);
-    } else {
-      setStakedHouses([newHouse, ...stakedHouses]);
-    }
-  };
-
-  const addNftsForUnstake = (newHouse) => {
-    setHousesForUnstake([newHouse]);
-  };
   const [openPopUp, setOpenPopUp] = useState(false);
 
   const closeModal = () => {

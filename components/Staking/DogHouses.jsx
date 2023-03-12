@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { DogHousesList } from "../../data/data";
 
-function App({openModal}) {
+function App({ openModal }) {
   const [selectedImages, setSelectedImages] = useState([]);
   const [isStakeDisabled, setIsStakeDisabled] = useState(true);
   const [isUnstakeDisabled, setIsUnstakeDisabled] = useState(true);
@@ -97,13 +97,13 @@ function App({openModal}) {
             onClick={() => handleImageClick(house.id)}
           >
             <Image
-             onDoubleClick={(e) => {
-              // openModal()
-              const newNft = house;
-              if (house.isStaked) {
-                openModal();
-              }
-            }}
+              onDoubleClick={(e) => {
+                // openModal()
+                const newNft = house;
+                if (house.isStaked) {
+                  openModal();
+                }
+              }}
               src={house.img}
               alt={`Dog House ${house.id}`}
               className="w-full h-full object-cover"
