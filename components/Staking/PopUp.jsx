@@ -183,7 +183,7 @@ const PopUp = () => {
             {booster1.name !== "" ? (
               <>
               <div onClick={openBoosterModal1}>
-                <Image className="w-18" src={booster1.nft} />
+                <Image  alt="img" className="w-18" src={booster1.nft} />
               </div>
 
               <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out du">
@@ -209,7 +209,7 @@ const PopUp = () => {
              {booster2.name !== "" ? (
                <>
                <div onClick={openBoosterModal2}>
-                 <Image className="w-18" src={booster2.nft} />
+                 <Image  alt="img" className="w-18" src={booster2.nft} />
                </div>
  
                <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">
@@ -235,7 +235,7 @@ const PopUp = () => {
              {booster3.name !== "" ? (
                <>
                <div onClick={openBoosterModal3}>
-                 <Image className="w-18" src={booster3.nft} />
+                 <Image alt="img" className="w-18" src={booster3.nft} />
                </div>
  
                <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">
@@ -260,7 +260,7 @@ const PopUp = () => {
             {specialBooster.name !== "" ? (
               <>
               <div onClick={openSpecialBoosterModal}>
-                <Image className="w-18" src={specialBooster.nft} />
+                <Image  alt="img" className="w-18" src={specialBooster.nft} />
               </div>
 
               <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">

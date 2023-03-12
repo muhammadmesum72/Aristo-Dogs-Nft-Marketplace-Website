@@ -6,8 +6,9 @@ import SelectNfts from "../../components/Select Nfts/SelectNfts";
 
 const createRaffle = () => {
   const [showSelectNftsModal, setShowSelectNftsModal] = useState(false);
+
   const showModal = () => {
-    setShowSelectNftsModal(true);
+    setShowSelectNftsModal(()=> true);
   };
   const closeModal = (e: any) => {
     if (e.target.id === "selectNftsModalBg") setShowSelectNftsModal(false);

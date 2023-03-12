@@ -52,7 +52,7 @@ const TradeItemsListing = () => {
               <tbody className="">
                 {
                   SendTradesOfferList.map((tradeOffer) => (
-                    <TradeItemSingleList  tradeOffer={tradeOffer} />
+                    <TradeItemSingleList key={tradeOffer.id}  tradeOffer={tradeOffer} />
                   ))
                 }
               </tbody>
