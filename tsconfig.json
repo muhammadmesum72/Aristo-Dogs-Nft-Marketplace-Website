@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/CreateTrade", "components/IncomingTradeItemSingleList.tsx", "components/StepProgressBar/ProgressBar.jsx", "components/Staking/DogHouses.jsx", "components/Staking/PopUp.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/CreateTrade", "components/IncomingTradeItemSingleList.tsx", "components/StepProgressBar/ProgressBar.jsx", "components/Staking/DogHouses.jsx", "components/Staking/PopUp.jsx", "components/Instant/AllCollections.jsx", "components/Instant/SinglecollectionHeader.jsx", "components/loans/LoansHeader.jsx"],
   "exclude": ["node_modules"]
 }

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import React from "react";
+import {useState} from "react";
 import { AiOutlineDownSquare } from "react-icons/ai";
 
 const myLoans = () => {
-  const [activeLoans, setActiveLoans] = React.useState(false);
-  const [defaultedLoans, setDefaultedLoans] = React.useState(false);
+  const [activeLoans, setActiveLoans] = useState(false);
+  const [defaultedLoans, setDefaultedLoans] = useState(false);
 
   const onClickActiveLoansBtn = () => setActiveLoans(!activeLoans);
   const onClickDefaultLoansBtn = () => setDefaultedLoans(!defaultedLoans);

@@ -2,12 +2,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { WalletNfts } from "../../data/data";
 
-const SelectBooster1 = ({addBooster1, boosters}) => {
+const SelectBooster1 = ({addBooster1, boosters, setOpenBoosterPopUp1}) => {
   const [showNftDetails, setShowNftDetails] = useState(false);
   const [selectBooster, setSelectBooster] = useState({
     name: "",
     id: "",
     nft: '',
+    per: 0
   })
   const [selected, isSelected] = useState(false)
   const [select, setSelect] = useState(false)
@@ -23,12 +24,12 @@ const SelectBooster1 = ({addBooster1, boosters}) => {
 
   const handleSelect = (nft) => {
     setSelectBooster(nft)
-    isSelected((prev) => !prev)
+    isSelected(true)
   }
   const onStakeBooster = () => {
+    // setSelect((prev) => !prev)
     addBooster1(selectBooster)
-    boosters.push(selected)
-    
+    setOpenBoosterPopUp1(false)
   }
 
   const [hoveredId, setHoveredId] = useState("");
@@ -55,10 +56,10 @@ const SelectBooster1 = ({addBooster1, boosters}) => {
         Stake in booster 1
       </div>
       { selected &&
-      <div onClick={onStakeBooster} className="bg-secondary cursor-pointer p-1 rounded-lg text-black px-4">
-          <h1>Stake {selectBooster.name}</h1>
+      <div onClick={onStakeBooster} className="cursor-pointer">
+          <h1 className="bg-secondary p-1 rounded-lg text-black px-4">{selectBooster.name} <span className="ml-4 text-white">+8%</span></h1>
       </div>
-        }
+}
       </div>
 
       <div className=" grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 items-center justify-center gap-6 px-4 pb-6">

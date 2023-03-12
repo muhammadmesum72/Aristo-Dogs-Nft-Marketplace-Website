@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "react-modal";
 import PopUp from "./PopUp";
+import DogHouses from "./DogHouses";
 const customStyles = {
   content: {
     // width: 'auto',
@@ -16,11 +17,25 @@ const customStyles = {
 };
 import { DogHousesList, StakedHouses } from "../../data/data";
 
-
 const Houses = () => {
   const [stakedHouses, setStakedHouses] = useState(StakedHouses);
   const [newHousesForStake, setNewHousesForStake] = useState([]);
+  const [houseForUnstake, setHousesForUnstake] = useState({});
+  // const [unStake, ]
 
+  const [selectedImages, setSelectedImages] = useState([]);
+
+  const handleImageClick = (image, isStaked) => {
+    // if (selectedImages.includes(image)){
+    // } else if(isStaked){
+    //   setUnstakeButton(true)
+    // }
+    // if (selectedImages.includes(image)) {
+    //     setSelectedImages(selectedImages.filter((selectedImage) => selectedImage !== image));
+    // } else {
+    //   setSelectedImages([...selectedImages, image]);
+    // }
+  };
 
   const addNftForStake = (newHouse) => {
     if (stakedHouses.includes(newHouse)) {
@@ -28,6 +43,10 @@ const Houses = () => {
     } else {
       setStakedHouses([newHouse, ...stakedHouses]);
     }
+  };
+
+  const addNftsForUnstake = (newHouse) => {
+    setHousesForUnstake([newHouse]);
   };
   const [openPopUp, setOpenPopUp] = useState(false);
 
@@ -41,7 +60,7 @@ const Houses = () => {
   return (
     <>
       <Modal
-      ariaHideApp={false}
+        ariaHideApp={false}
         isOpen={openPopUp}
         onRequestClose={closeModal}
         style={customStyles}
@@ -50,65 +69,8 @@ const Houses = () => {
         <PopUp />
       </Modal>
       <div className="border border-1 border-opacity-40 border-white rounded-xl p-6 mt-6 mx-6 lg:mx-0 lg:mr-3  mb-12 ">
-        <div className="flex flex-row items-center justify-between mb-6 ">
-          <div></div>
-          <div>
-            <h1 className=" text-2xl md:text-3xl uppercase font-semibold">
-              My Dog Houses
-            </h1>
-          </div>
-          <div>
-            {newHousesForStake.length > 0 ? (
-              <button
-                onClick={() =>
-                  console.log('stake nfts')
-                }
-                className="bg-hardSecondary rounded-lg  px-6 py-2 text-primary font-bold hover:text-white transition ease-in-out"
-              >
-                Stake Nfts
-              </button>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-6">
-          {DogHousesList.map((house) => (
-            <div className="relative w-fit">
-              <label htmlFor={house.id} >
-                <Image
-                  onClick={(e) => {
-                    const newNft = house;
-                    if (house.isStaked) {
-                      openModal();
-                    } else {
-                      addNftForStake(newNft);
-                      newHousesForStake.push(newNft);
-                    }
-                    console.log(newHousesForStake);
-                  }}
-                  src={house.img}
-                  key={house.id}
-                  className="w-48 cursor-pointer hover:opacity-70 transition ease-in-out duration-200 opacity-100"
-                  alt="dogHouse"
-                />
-              </label>
-              {house.isStaked ? (
-                <div className="bg-secondary opacity-100 absolute top-0 left-0  text-black px-3 py-2 rounded-xl text-sm font-bold">
-                  Staked
-                </div>
-              ) : (
-                
-                  <input
-                    id={house.id}
-                    name={house.id}
-                    type="checkbox"
-                    className="bg-secondary opacity-100 absolute top-0 right-0  text-black px-3 py-2 rounded-xl text-sm font-bold"
-                  />
-              )}
-            </div>
-          ))}
+        <div className="w-full">
+          <DogHouses openModal={openModal} />
         </div>
       </div>
     </>

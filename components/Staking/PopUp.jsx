@@ -12,8 +12,6 @@ import SelectBooster2 from "./SelectBooster2";
 import SelectBooster3 from "./SelectBooster3";
 const customStyles = {
   content: {
-    // width: 'auto',
-    // background: 'rgba(0,0,0,0.4)',
     top: "50%",
     left: "50%",
     right: "auto",
@@ -130,7 +128,7 @@ const PopUp = () => {
         style={customStyles}
         className="text-white border-none outline-none  w-3/4  lg:w-1/2 rounded-xl bg-primary "
       >
-        <SelectBooster1 addBooster1={addBooster1} boosters={Boosters} />
+        <SelectBooster1 addBooster1={addBooster1} boosters={Boosters } setOpenBoosterPopUp1={setOpenBoosterPopUp1} />
       </Modal>
       <Modal
       ariaHideApp={false}
@@ -139,7 +137,7 @@ const PopUp = () => {
         style={customStyles}
         className="text-white border-none outline-none  w-3/4  lg:w-1/2 rounded-xl bg-primary "
       >
-        <SelectBooster2 addBooster2={addBooster2} />
+        <SelectBooster2 addBooster2={addBooster2} setOpenBoosterPopUp2={setOpenBoosterPopUp2} />
       </Modal>
       <Modal
       ariaHideApp={false}
@@ -148,7 +146,7 @@ const PopUp = () => {
         style={customStyles}
         className="text-white border-none outline-none  w-3/4  lg:w-1/2 rounded-xl bg-primary "
       >
-        <SelectBooster3 addBooster3={addBooster3} />
+        <SelectBooster3 addBooster3={addBooster3} setOpenBoosterPopUp3={setOpenBoosterPopUp3} />
       </Modal>
 
       <Modal
@@ -158,7 +156,7 @@ const PopUp = () => {
         style={customStyles}
         className="text-white border-none outline-none w-3/4  lg:w-1/2 rounded-xl bg-primary "
       >
-        <SelectSpecialBooster addSpecialBooster={addSpecialBooster} />
+        <SelectSpecialBooster addSpecialBooster={addSpecialBooster} setOpenSpecialBoosterPopUp={setOpenSpecialBoosterPopUp} />
       </Modal>
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="text-center">
@@ -175,91 +173,104 @@ const PopUp = () => {
         <div className="flex flex-wrap items-center justify-center gap-6">
           {/* slot 1 */}
           <div
-            onClick={openBoosterModal1}
-            className="relative w-32 text-center border border-1 border-secondary rounded-xl h-32 overflow-hidden cursor-pointer"
+             
+            className="relative w-32 text-center border border-1 border-secondary rounded-xl  cursor-pointer"
           >
-            <div className=" py-1 bg-secondary text-black font-semibold w-full">
+
+            <div className=" rounded-t-xl py-1 bg-secondary text-black font-semibold w-full">
               Booster 1
             </div>
             {booster1.name !== "" ? (
               <>
-              <div>
-                <Image src={booster1.nft} />
+              <div onClick={openBoosterModal1}>
+                <Image className="w-18" src={booster1.nft} />
               </div>
-              <div className="py-1 font-bold text-primary  absolute bottom-0 text-center w-full bg-white opacity-40 hover:opacity-100 hover:bg-red-600 hover:text-white">
-                UnStake
+
+              <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out du">
+                UnStake <br />
+                <span>-4%</span>
               </div>
               </>
               
             ) : (
-              <div className="text-3xl font-bold mt-3">+</div>
+              <div onClick={openBoosterModal1} className="text-3xl font-bold mt-3">+</div>
             )}
           </div>
           {/* slot 2 */}
+          
+         <div
+             
+             className="relative w-32 text-center border border-1 border-secondary rounded-xl  cursor-pointer"
+           >
+ 
+             <div className=" rounded-t-xl py-1 bg-secondary text-black font-semibold w-full">
+               Booster 2
+             </div>
+             {booster2.name !== "" ? (
+               <>
+               <div onClick={openBoosterModal2}>
+                 <Image className="w-18" src={booster2.nft} />
+               </div>
+ 
+               <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">
+                UnStake <br />
+                <span>-1%</span>
+              </div>
+               </>
+               
+             ) : (
+               <div onClick={openBoosterModal2} className="text-3xl font-bold mt-3">+</div>
+             )}
+           </div>
+
+           {/* slot 3 */}
           <div
-            onClick={openBoosterModal2}
-            className="relative w-32 text-center border border-1 border-secondary rounded-xl h-32 overflow-hidden cursor-pointer "
-          >
-            <div className="py-1 bg-secondary text-black font-semibold w-full">
-              Booster 2
-            </div>
-
-           {booster2.name !== "" ? (
-            <>
-              <div>
-                <Image src={booster2.nft} />
+             
+             className="relative w-32 text-center border border-1 border-secondary rounded-xl  cursor-pointer"
+           >
+ 
+             <div className=" rounded-t-xl py-1 bg-secondary text-black font-semibold w-full">
+               Booster 3
+             </div>
+             {booster3.name !== "" ? (
+               <>
+               <div onClick={openBoosterModal3}>
+                 <Image className="w-18" src={booster3.nft} />
+               </div>
+ 
+               <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">
+                UnStake <br />
+                <span>-5%</span>
               </div>
-              <div className="py-1 font-bold text-primary  absolute bottom-0 text-center w-full bg-white opacity-40 hover:opacity-100 hover:bg-red-600 hover:text-white">
-                UnStake
-              </div>
-            </>
-
-            ) : (
-              <div className="text-3xl font-bold mt-3">+</div>
-            )}
-          </div>
-          {/* slot 3 */}
-          <div
-            onClick={openBoosterModal3}
-            className="relative w-32 text-center border border-1 border-secondary rounded-xl h-32 overflow-hidden cursor-pointer "
-          >
-            <div className="py-1 bg-secondary text-black font-semibold w-full">
-              Booster 3
-            </div>
-
-           {booster3.name !== "" ? (
-            <>
-              <div>
-                <Image src={booster3.nft} />
-              </div>
-              <div className="py-1 font-bold text-primary  absolute bottom-0 text-center w-full bg-white opacity-40 hover:opacity-100 hover:bg-red-600 hover:text-white">
-                UnStake
-              </div>
-            </>
-            ) : (
-              <div className="text-3xl font-bold mt-3">+</div>
-            )}
-          </div>
+               </>
+               
+             ) : (
+               <div onClick={openBoosterModal3} className="text-3xl font-bold mt-3">+</div>
+             )}
+           </div>
           {/* special slot  */}
           <div
-            onClick={openSpecialBoosterModal}
-            className="relative w-32 ml-0 lg:ml-2 text-center border border-1 border-secondary rounded-xl h-32 overflow-hidden cursor-pointer "
+             
+            className="relative w-32 text-center border border-1 border-secondary rounded-xl  cursor-pointer"
           >
-            <div className="py-1 bg-secondary text-black font-semibold w-full">
+
+            <div className=" rounded-t-xl py-1 bg-secondary text-black font-semibold w-full">
               Special Booster
             </div>
+            {specialBooster.name !== "" ? (
+              <>
+              <div onClick={openSpecialBoosterModal}>
+                <Image className="w-18" src={specialBooster.nft} />
+              </div>
 
-           {specialBooster.name !== "" ? (
-            <>
-            <div className="py-1 font-bold text-primary  absolute bottom-0 text-center w-full bg-white opacity-40 hover:opacity-100 hover:bg-red-600 hover:text-white">
-                UnStake
+              <div className="py-1 rounded-lg font-bold text-primary  absolute -bottom-4 text-center w-full bg-white opacity-20  hover:opacity-100 hover:bg-red-600 hover:text-white h-8 hover:h-auto transition-all ease-in-out duration-200">
+                UnStake <br />
+                <span>-7%</span>
               </div>
-              <div>
-                <Image src={specialBooster.nft} />
-              </div>
-            </>
+              </>
+              
             ) : (
-              <div className="text-3xl font-bold mt-3">+</div>
+              <div onClick={openSpecialBoosterModal} className="text-3xl font-bold mt-3">+</div>
             )}
           </div>
         </div>

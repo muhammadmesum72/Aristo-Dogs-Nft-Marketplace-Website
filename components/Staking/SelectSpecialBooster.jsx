@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { WalletNfts } from "../../data/data";
 
-const SelectSpecialBooster = ({ addSpecialBooster }) => {
+const SelectSpecialBooster = ({ addSpecialBooster, setOpenSpecialBoosterPopUp }) => {
   const [showNftDetails, setShowNftDetails] = useState(false);
   const [selectBooster, setSelectBooster] = useState({
     name: "",
@@ -22,10 +22,11 @@ const SelectSpecialBooster = ({ addSpecialBooster }) => {
 
   const handleSelect = (nft) => {
     setSelectBooster(nft);
-    isSelected((prev) => !prev);
+    isSelected(true)
   };
   const onStakeBooster = () => {
     addSpecialBooster(selectBooster);
+    setOpenSpecialBoosterPopUp(false)
   };
 
   const [hoveredId, setHoveredId] = useState("");
@@ -53,7 +54,7 @@ const SelectSpecialBooster = ({ addSpecialBooster }) => {
             onClick={onStakeBooster}
             className="bg-secondary cursor-pointer  p-1 rounded-lg text-black px-4"
           >
-            <h1>Stake {selectBooster.name}</h1>
+            <h1>Stake {selectBooster.name} <span className="ml-4 text-white">+14%</span></h1>
           </div>
         )}
       </div>

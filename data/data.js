@@ -125,6 +125,16 @@ export const DogHousesList = [
     img: DogHouse4,
     isStaked: false,
   },
+  {
+    id: 5,
+    img: DogHouse5,
+    isStaked: false,
+  },
+  {
+    id: 6,
+    img: DogHouse6,
+    isStaked: true,
+  },
 ];
 
 export const WalletNfts = [
